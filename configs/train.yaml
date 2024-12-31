@@ -1,0 +1,16 @@
+# exp setting
+exp_name: 'baseline' # name that will be used in tensorboard
+version: version_1
+seed: null # seed, set null for random
+debug: False # debug mode, will use cpu only
+devices: [0,1,2,3,4,5,6,7] # gpu ids
+
+# data related
+data_path: ${TRAINING_DATA_PATH}
+mini: False # random sample a mini dataset for debug, set seed for reproducibility
+overlap_sample: False # not implemented yet
+
+find_lr: False
+load_num_workers: 8
+defaults:
+  - method: planT

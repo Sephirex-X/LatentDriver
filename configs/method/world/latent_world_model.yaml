@@ -1,0 +1,17 @@
+name: latent_world_model
+act_dim: 3
+enc_hidden_size: 256
+hidden_size: 256
+ordering: 1
+max_ep_len: 81 # used if ordering is True
+representation_query_num: 32
+reconstruction_query_num: 189
+GPT_conf: 
+    n_layer: 8
+    n_head: 8
+    n_inner: #{4 * ${hidden_size}} 
+    activation_function: "relu"
+    n_positions: 1024
+    resid_pdrop: 0.1
+    attn_pdrop: 0.1
+    max_token: 1024 #max 2800 default 1024

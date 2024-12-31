@@ -1,0 +1,33 @@
+# common
+model_name: baseline
+ckpt_path: null
+# action space
+action_space:
+    dynamic_type: waypoint
+    type: continuous # can be 'continuous' or 'discrete',
+    action_ranges: [[-0.14, 6], [-0.35, 0.35], [-0.15,0.15]]
+    bins: [13,13,13] #only for discrete
+
+max_len: 1
+
+defaults:
+    - encoder: bert
+hidden_channels: [64]
+# train
+max_epochs: 10 
+learning_rate: 1.0e-4
+train_batch_size: 5000 
+grad_clip_norm: null
+optimizer:
+    type: Adam
+    # eps: 0.0001
+scheduler:
+    type: OneCycleLR
+    max_lr: ${learning_rate}
+    pct_start: 0.04
+    div_factor: 25.0 
+    final_div_factor: 100
+    anneal_strategy: linear
+strategy: ddp_find_unused_parameters_true
+
+

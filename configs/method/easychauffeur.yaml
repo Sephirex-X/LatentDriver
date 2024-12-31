@@ -1,0 +1,20 @@
+model_name: easychauffeur
+ckpt_path: null
+# action space
+action_space:
+    dynamic_type: bicycle
+    type: continuous
+    action_ranges: [[-6, 6], [-0.3, 0.3]]
+    bins: [13,39] #only for discrete
+# data related
+max_len: 1
+# model related
+policy_head_arch: [64,64]
+value_head_arch: [64,64]
+pretrain_enc: null
+defaults:
+    - encoder: bert
+    
+distribution_entry_point: null
+distribution_kwargs:
+  control_type: bicycle

@@ -1,0 +1,47 @@
+# common
+model_name: latentdriver
+ckpt_path: null
+# action space
+action_space:
+    dynamic_type: waypoint
+    type: continuous # can be 'continuous' or 'discrete',
+    action_ranges: [[-0.14, 6], [-0.35, 0.35], [-0.15,0.15]]
+    bins: [13,13,13] #only for discrete
+# data related
+max_len: 2 # max_len is the how long you want to use the history for your prediction
+
+# model related
+mode: 6 # mode for GMM
+num_of_decoder: 3 # how many decoder to use in MPP
+est_layer: 0 # which layer to estimate the action 
+
+max_length: ${max_len} # for inference
+eval_context_length: ${max_len}  #eval_context_length is the how long you want to use the history for your prediction
+function: 'enc-LWM-MPP' # can be: 'enc-LWM-MPP', 'enc-MPP', indicates which combination you wish to use
+
+pretrain_world: null
+freeze_world: False # whether to freeze the world model during training
+
+pretrain_enc: null #'checkpoints/pretrained_bert.pth.tar'
+freeze_enc: False # whether to freeze the encoder during training
+
+
+defaults:
+    - encoder: bert
+    - world: latent_world_model
+
+# train
+max_epochs: 10 #150 #40
+learning_rate: 1.0e-4
+train_batch_size: 5000 #150
+
+grad_clip_norm: null
+optimizer:
+    type: Adam
+    # eps: 0.0001
+scheduler:
+    type: CosineAnnealingLR
+
+strategy: ddp_find_unused_parameters_true
+# strategy: ddp
+

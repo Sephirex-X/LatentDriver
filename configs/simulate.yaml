@@ -1,0 +1,44 @@
+vis: False # whether to visualize the simulation, can be [False, 'image', 'video'].
+
+# The setting below is not used in behavior cloning
+rewards:
+  sdc_progression: 0.0 # our implementation, replace the sdc_route by expert_traj
+  offroad: -1.0
+  overlap: -1.0
+  sdc_kinematic_infeasibility: 0.0
+  log_divergence: 0.0
+  speed_divergence: -1.0 # our implementation
+  sdc_wrongway: -1.0 # our implementation
+
+# simulator related config
+waymax_conf:
+  path: ${WOMD_VAL_PATH} # path to WOMD
+  max_num_objects: 128
+  max_num_rg_points: 20000
+  num_shards: 4
+  repeat: 1
+  distributed: True
+  drop_remainder: True # Argument for tf.data.Dataset.batch. Set True to drop remainder if the last batch does not contain enough examples. Note training should not be affected since it is looping over all data for multiple epochs. For evaluation, it should be set to False to include all examples.
+  customized: False # added for customized rollout on set of specific scenarios, should change the path accordingly
+  
+ego_control_setting:
+  ego_policy_type: custom #[custom, expert,stationary]
+  npc_policy_type: expert #[expert, idm]
+  # should be defined in method config file
+  action_type: ${action_space.dynamic_type}
+  action_space: ${action_space}
+  
+
+metric_conf:
+  arrival_thres: [0.75,0.8,0.85,0.9,0.95]
+  intention_label_path: ${INTENTION_VAL_PATH}
+
+data_conf:
+  max_map_segments: 1000 # max number of map segments in a scenario. For map collection only
+  max_roadgraph_segments: 40 # max number of roadgraph segments per-frame. Not used here, checkout usage in 'simulator/observation.py'
+  max_route_segments: 20 # max number of route segments per-frame. For map collection only
+  FOV: [80, 20] # for width and height, Not used here checkout usage in 'simulator/observation.py'
+  path_to_processed_map_route: ${PRE_PROCESS_VAL_PATH} # path to preprocessed map and route for val or train set
+
+defaults:
+  - method: latentdriver

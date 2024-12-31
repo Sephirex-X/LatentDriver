@@ -1,0 +1,6 @@
+name: bert
+type_name :  'bert-mini'
+#prajjwal1/bert-tiny, prajjwal1/bert-mini, prajjwal1/bert-small, prajjwal1/bert-medium
+online : True # whether to load from huggingface web
+attributes : 6
+embedding_type: ${action_space.dynamic_type}
