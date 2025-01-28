@@ -22,7 +22,7 @@ Authors: *Lingyu Xiao, Jiang-Jiang Liu, Sen Yang, Xiaofan Li, Xiaoqing Ye, Wanko
  ### Jan. 2025
   - 🎉 Accepted by ICRA 2025!
  ### Dec. 2024
-  - Release code for training and testing
+  - Released code for training and testing
  ### Oct. 2024
    - Launched the [official website](https://sephirex-x.github.io/LatentDriver/)
    - Published on [Arxiv](https://arxiv.org/pdf/2409.15730)
