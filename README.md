@@ -18,6 +18,14 @@ This is the official repository of
 🔥Powered by [Hydra](https://hydra.cc/docs/intro/), [Pytorch-lightinig](https://lightning.ai/docs/pytorch/stable/), [Tensorboard](https://github.com/tensorflow/tensorboard) and [Waymax](https://github.com/waymo-research/waymax).
 
 Authors: *Lingyu Xiao, Jiang-Jiang Liu, Sen Yang, Xiaofan Li, Xiaoqing Ye, Wankou Yang and Jingdong Wang*
+## 📰 News
+ ### Jan. 2025
+  - 🎉 Accepted by ICRA 2025!
+ ### Dec. 2024
+  - Release code for training and testing
+ ### Oct. 2024
+   - Launched the [official website](https://sephirex-x.github.io/LatentDriver/)
+   - Published on [Arxiv](https://arxiv.org/pdf/2409.15730)
 
 ## 💡 Highlights
 
