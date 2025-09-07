@@ -112,6 +112,17 @@ A3: Yes, it is normal. And this need to be optimized in JAX.
 If you find our work is useful, please consider citing and 🌟 us:
 
 ```
+@INPROCEEDINGS{11127996,
+  author={Xiao, Lingyu and Liu, Jiang-Jiang and Yang, Sen and Li, Xiaofan and Ye, Xiaoqing and Yang, Wankou and Wang, Jingdong},
+  booktitle={2025 IEEE International Conference on Robotics and Automation (ICRA)}, 
+  title={Learning Multiple Probabilistic Decisions from Latent World Model in Autonomous Driving}, 
+  year={2025},
+  volume={},
+  number={},
+  pages={1279-1285},
+  keywords={Uncertainty;Imitation learning;Refining;Decision making;Stochastic processes;Reinforcement learning;Benchmark testing;Predictive models;Probabilistic logic;Robotics and automation},
+  doi={10.1109/ICRA55743.2025.11127996}}
+
 @article{xiao2024learning,
   title={Learning Multiple Probabilistic Decisions from Latent World Model in Autonomous Driving},
   author={Xiao, Lingyu and Liu, Jiang-Jiang and Yang, Sen and Li, Xiaofan and Ye, Xiaoqing and Yang, Wankou and Wang, Jingdong},
